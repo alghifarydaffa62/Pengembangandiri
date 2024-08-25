@@ -1,0 +1,120 @@
+* {
+    margin: 0;
+    padding: 0;
+    color: white;
+    font-family: monospace;
+}
+body {
+    background-color: rgb(26, 26, 26);
+}
+nav {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    margin: 30px 10px;
+}
+.hamburger {
+    display: none;
+}
+.logo a {
+    text-decoration: none;
+    font-size: 20px;
+}
+.navbar {
+    display: flex;
+}
+.navbar ul {
+    list-style: none;
+}
+.navbar li a {
+    text-decoration: none;
+    font-size: 18px;
+    padding: 10px 20px;
+    margin: 0 5px;
+}
+.navbar li a:hover {
+    color: blue;
+}
+form {
+    margin-top: 4vh;
+}
+label {
+    font-size: 15px;
+}
+input {
+    padding: 2vh 1vw;
+    border-radius: 5px;
+    color: black;
+}
+.form {
+    margin: 10vh 30vw;
+    padding: 5vh 5vw;
+    background-color: rgb(2, 9, 36);
+    border-radius: 5px;
+    filter: drop-shadow(2px 2px 3px #ffffff);
+}
+.button {
+    background-color: rgb(0, 119, 79);
+    text-align: center;
+    padding: 10px;
+    border-radius: 5px;
+    margin-top: 3vh;
+}
+.button a {
+    text-decoration: none;
+    box-sizing: border-box;
+    font-size: 15px;
+}
+.intro {
+    margin: 15vh 14vw;
+}
+#typing {
+    color: rgb(166, 0, 216);
+}
+@media screen and (max-width: 1320px) {
+    nav {
+        padding: 0 50px;
+    }
+}
+@media screen and (max-width: 1100px) {
+    nav {
+        padding: 0 30px;
+    }
+}
+@media screen and (max-width: 900px) {
+    .hamburger {
+        display: block;
+        cursor: pointer;
+    }
+    .line {
+        width: 30px;
+        height: 3px;
+        background: #ffffff;
+        margin: 6px 0;
+    }
+    .navbar {
+        height: 0;
+        position: absolute;
+        top: 80px;
+        right: 0;
+        left: 0;
+        width: 100vw;
+        overflow: hidden;
+        z-index: 100;
+    }
+    .navbar ul {
+        width: fit-content;
+        margin: 20px auto 0 auto;
+        text-align: center;
+    }
+    .navbar.active {
+        display: block;
+        height: 250px;
+        width: 100%;
+        transition: 0.2s;
+        background-color: rgb(31, 31, 31);
+    }
+    .navbar ul li a {
+        opacity: 1;
+    }
+}

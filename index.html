@@ -4,8 +4,77 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <script src="script.js"></script>
+    <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
+    <script>
+        var typed = new Typed('#element', {
+        strings: ['<i>First</i> sentence.', '&amp; a second sentence.'],
+        typeSpeed: 50,
+    });
+    </script>
+
+    <nav>
+        <div class="logo">
+            <a href="">DFPRO</a>
+        </div>
+        <div class="hamburger">
+            <div class="line"></div>
+            <div class="line"></div>
+            <div class="line"></div>
+        </div>
+        <div class="navbar">
+            <ul>
+                <li>
+                    <a href="index.html" class="active">Home</a>
+                </li>
+            </ul>
+            <ul>
+                <li>
+                    <a href="">JS</a>
+                </li>
+            </ul>
+            <ul>
+                <li>
+                    <a href="">Bootstrap</a>
+                </li>
+            </ul>
+            <ul>
+                <li>
+                    <a href="">Tailwind</a>
+                </li>
+            </ul>
+            <ul>
+                <li>
+                    <a href="">Chakra UI</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <div class="intro">
+        <h2>Hi guys, iam</h2>
+        <h1>Muhammad Daffa Al Ghifary</h1>
+        <h3>I'm a <span id="element"></span></h3>
+    </div>
+    <div class="form">
+        <h1 class="title">Login</h1>
+        <form action="">
+            <label for="firstname">First Name:</label><br>
+            <input type="text" placeholder="Enter your first name" size="40"><br><br>
+            <label for="lastname">Last Name:</label><br>
+            <input type="text" placeholder="Enter your last name" size="40"><br><br>
+            <label for="age">Your Age:</label><br>
+            <input type="number" placeholder="Enter your age" size="40"><br><br>
+            <label for="email">Your Email:</label><br>
+            <input type="email" placeholder="Enter your email" size="40">
+        </form>
+        <div class="button">
+            <a href="">Submit</a>
+        </div>
+    </div>
+
     
 </body>
 </html>

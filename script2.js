@@ -167,3 +167,66 @@ mahasiswa
 const angka = [4, 6, 8, '*', 12, 14]
 angka[3] = angka[2] + 2
 console.log(angka[3])
+
+// FUNCTION CARA 1
+const sum1 = new Function('x', 'y', 'console.log(x+y)')
+sum1(35, 65)
+
+// FUNCTION CARA 2
+const sum2 = function tambah(x, y) {
+    console.log(x+y)
+}
+sum2(23, 87)
+
+// FUNCTION CARA 3 ARROW FUNCTION
+const sum3 = (x, y) => {
+    console.log(x + y)
+}
+sum3(10, 25)
+
+function randomize() {
+    const randomnum = ~~(Math.random() * 1000)
+    if(randomnum > 300) {
+        console.log('Angka lebih dari 300')
+    } else {
+        console.log(randomnum)
+    }
+}
+randomize()
+
+// TUGAS DEA AFRIZAL
+// 1. membuat perhitungan luas lingkaran, segitiga, persegi panjang, jajar genjang
+// 2. total gaji karyawan dalam 1 bulan, input: nama, gaji perhari, hari bekerja
+
+function lingkaran(r) {
+    const PHI = 3.14
+    let luas1 = PHI * r * r
+    console.log(`Luas lingkaran adalah ${luas1}`)
+}
+function segitiga(alas, tinggi) {
+    let luas2 = 1/2*alas*tinggi
+    console.log(`Luas segitiga adalah ${luas2}`)
+}
+function persegi_panjang(p, l) {
+    let luas3 = p*l
+    console.log(`Luas persegi panjang adalah ${luas3}`)
+}
+function jajar_genjang(a, t) {
+    let luas4 = a*t
+    console.log(`Luas jajar genjang adalah ${luas4}`)
+}
+lingkaran(14)
+segitiga(8, 12)
+persegi_panjang(15, 10)
+jajar_genjang(4, 5)
+
+let nama = prompt('Masukkan nama karyawan')
+let gaji_perhari = Number(prompt('Masukkan gaji perhari'))
+let jumlah_hari = Number(prompt('Masukkan jumlah hari bekerja'))
+
+function total_gaji() {
+    let total = gaji_perhari * jumlah_hari
+    alert(`Karyawan ${nama} memiliki total gaji sebesar Rp. ${total}`)
+}
+
+total_gaji()

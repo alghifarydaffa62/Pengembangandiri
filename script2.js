@@ -77,7 +77,6 @@ function tekskembali() {
 }
 
 // Tugas Dea Afrizal 2
-
 const newline = document.createElement('h3')
 newline.innerHTML = 'Muhammad Daffa Al Ghifary'
 
@@ -88,3 +87,83 @@ function munculTeks() {
 function warna() {
     newline.style.color = 'cyan'
 }
+
+// Array
+// const emote = []
+// emote[0] = 'Daffa'
+// emote[1] = 'Navyz'
+// emote[2] = 'Fahmi'
+// emote[3] = 'Fathoni'
+// console.log(emote)
+
+// const dosen = new Array('Bu Tita', 'Pak Hero', 'Bu Desy', 'Pak Thoni')
+// console.log(dosen)
+
+const buah = ['Alpukat', 'Semangka', 'Ceri', 'Pir', 'Pisang']
+const watermelon = buah.includes('Semangka')
+// const salak = buah.includes('salak')
+// console.log(salak)
+// console.log(posisi)
+
+if(watermelon) {
+    const posisi = buah.indexOf('Semangka')
+    const before_posisi = posisi - 1
+    const setelah_posisi = posisi + 1
+    const buah_sebelum = buah[before_posisi]
+    const buah_setelah = buah[setelah_posisi]
+
+    console.log(`buah semangka ada di posisi ${posisi}`)
+    console.log(`buah sebelum semangka adalah ${buah_sebelum}`)
+    console.log(`buah setelah semangka adalah ${buah_setelah}`)
+} else {
+    console.log('Tidak ada')
+}
+
+const jurusan = ['informatika', 'komputer', 'multimedia broadcasting', 'Game Tech', 'ELIN'] // ori
+const jurusanbaru = jurusan.slice() // KW
+
+jurusanbaru[0] = 'ELKA'
+// console.log(jurusan)
+// console.log(jurusanbaru)
+
+const mergearray = buah.concat(jurusan)
+// console.log(mergearray)
+for (list of mergearray) console.log(list)
+// for (list in mergearray) console.log(list)
+// mergearray.map((value, index) => console.log(value, index))
+
+const mahasiswa = [
+    {
+        name: 'Daffa',
+        prodi: 'Teknik Informatika',
+        umur: 17,
+    },
+    {
+        name: 'Thoni',
+        prodi: 'Teknik Informatika',
+        umur: 28,
+    },
+    {
+        name: 'Ahmad',
+        prodi: 'Teknik Mekatronika',
+        umur: 21,
+    },
+    {
+        name: 'Munsif',
+        prodi: 'Multimedia broadcasting',
+        umur: 19,
+    },
+]
+
+// mahasiswa.map((value, index) => console.log(value.name))
+// mahasiswa.sort((a, b) => b.umur - a.umur).map((value => console.log(value)))
+// mahasiswa.sort((a, b) => a.umur - b.umur).map((value => console.log(value)))
+mahasiswa
+    .sort((a, b) => b.umur - a.umur)
+    .filter((x) => x.umur > 17)
+    .map((value) => console.log(value))
+
+// Tugas Dea Afrizal
+const angka = [4, 6, 8, '*', 12, 14]
+angka[3] = angka[2] + 2
+console.log(angka[3])

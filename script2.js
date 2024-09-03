@@ -252,35 +252,63 @@ jajar_genjang(4, 5)
 const token = ~~[Math.random() * 12345678]
 const gambar = ['monalisa', 'betofen', 'raden salah']
 
-function login(username, callback) {
-    setTimeout(() => {
-        console.log('loadiiinggg.....')
-        callback({token, username})
-    }, 200);
-}
-function getcode(token, callback) {
-    if (token)
-    setTimeout(() => {
-        console.log("Processing token....")
-        callback ({codeKey: "abd1222"})
-    }, 500)
-}
-function lukisan(codeKey, callback) {
-    if (codeKey) 
-    setTimeout(() => {
-        console.log("Processing Image..")
-        callback ({gambar})
-    }, 1500)
+function login(username) {
+    return new Promise((success, failed) => {
+        setTimeout(() => {
+            console.log("loginnn... loading")
+            if(username != "Daffa Al Ghifary") failed("Username salah!")
+                success({token})
+        }, 200);
+    })
 }
 
-login("fathoni", function(response) {
-    const {token} = response
-    getcode(token, function(response) {
-        const getcode = response
-        lukisan(getcode, function(response) {
-            const getgambar = response
-            console.log(getgambar)
-        })
+function getcode(token) {
+    return new Promise((success, failed) => {
+        if(!token) failed("No Token!")
+            setTimeout(() => {
+                console.log("Processing Codekey!")
+                success ({codeKey: "abd1222"})
+            }, 500)
     })
     
-})
+}
+
+function lukisan(codeKey) {
+    return new Promise((success, failed) => {
+        if (!codeKey) failed("No Codekey ? No pass!")
+            setTimeout(() => {
+                console.log("Processing Image..")
+                success ({gambar})
+            }, 1500)
+    })
+    
+}
+async function userDisplay() {
+    try {
+        const {token} = await login("Daffa Al Ghifary")
+    const {codeKey} = await getcode(token)
+    const {gambar} = await lukisan(codeKey)
+
+    console.log(`
+        Token user adalah ${token}
+        Key user adalah ${codeKey}
+        Gambar user adalah ${gambar}    
+    `)
+    } catch(err) {
+        console.log(err)
+    }
+    
+}
+userDisplay()
+// user.then(function(response) {
+//     const {token} = response
+//     getcode(token).then(function(response) {
+//         const {codeKey} = response
+//         console.log(codeKey)
+
+//         lukisan(codeKey).then(function(response) {
+//             const {gambar} = response
+//             console.log(gambar)
+//         }).catch(err => console.log(err))
+//     }).catch(err => console.log(err))
+// }).catch(err => console.log(err))

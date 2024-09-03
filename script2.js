@@ -132,6 +132,7 @@ for (list of mergearray) console.log(list)
 // for (list in mergearray) console.log(list)
 // mergearray.map((value, index) => console.log(value, index))
 
+// OBJECT
 const mahasiswa = [
     {
         name: 'Daffa',
@@ -312,3 +313,64 @@ userDisplay()
 //         }).catch(err => console.log(err))
 //     }).catch(err => console.log(err))
 // }).catch(err => console.log(err))
+
+// WPU OBJECT
+let PENS = {
+    nama: 'Muhammad Daffa Al Ghifary',
+    kelas: 'IT C', 
+    prodi: 'Teknik Informatika',
+    NRP: '3124600071'
+}
+
+// function declaration
+function buatdata(nama, kelas, prodi, NRP) {
+    let PENS = {};
+    PENS.nama = nama
+    PENS.kelas = kelas
+    PENS.prodi = prodi
+    PENS.NRP = NRP
+
+    return PENS;
+}
+let PENS2 = buatdata('Fathoni widyawanto', 'IT C', 'Teknik Jawa', '3124600075')
+
+// Constructor
+function student(nama, kelas, prodi, NRP) {
+    this.nama = nama
+    this.kelas = kelas
+    this.prodi = prodi
+    this.NRP = NRP
+}
+
+let PENS3 = new student('Yoga prasetyo', 'IT C', 'Teknik Informatik', '3124600079')
+
+// STUDI KASUS ANGKOT
+function angkot (sopir, trayek, penumpang, kas) {
+    this.sopir = sopir
+    this.trayek = trayek
+    this.penumpang = penumpang
+    this.kas = kas
+
+    this.penumpangNaik = function(nama) {
+        this.penumpang.push(nama)
+        return this.penumpang
+    }
+
+    this.penumpangTurun = function(nama, bayar) {
+        if(penumpang == 0) {
+            console.log('Angkot kosong woe')
+            return false
+        }
+
+        for(let i = 0; i < this.penumpang.length; i++) {
+            if(this.penumpang[i] == nama) {
+                this.penumpang[i] = undefined
+                this.kas += bayar
+                return this.penumpang
+            }
+        }
+    }
+}
+
+let angkot1 = new angkot('Budiono siregar', 'surabaya-bandung', [], 0)
+let angkot2 = new angkot('Fany Widiawanto', 'sidoarjo-gubeng', [], 0)

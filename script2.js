@@ -220,13 +220,67 @@ segitiga(8, 12)
 persegi_panjang(15, 10)
 jajar_genjang(4, 5)
 
-let nama = prompt('Masukkan nama karyawan')
-let gaji_perhari = Number(prompt('Masukkan gaji perhari'))
-let jumlah_hari = Number(prompt('Masukkan jumlah hari bekerja'))
+// let nama = prompt('Masukkan nama karyawan')
+// let gaji_perhari = Number(prompt('Masukkan gaji perhari'))
+// let jumlah_hari = Number(prompt('Masukkan jumlah hari bekerja'))
 
-function total_gaji() {
-    let total = gaji_perhari * jumlah_hari
-    alert(`Karyawan ${nama} memiliki total gaji sebesar Rp. ${total}`)
+// function total_gaji() {
+//     let total = gaji_perhari * jumlah_hari
+//     alert(`Karyawan ${nama} memiliki total gaji sebesar Rp. ${total}`)
+// }
+
+// total_gaji()
+
+
+// ASYNCHRONUS
+// function satu() {
+//     console.log("satu");
+// }
+// function dua() {
+//     setTimeout(() => {
+//         console.log("dua");
+//     }, 3000)
+// }
+// function tiga() {
+//     console.log("tiga");
+// }
+
+// satu()
+// dua()
+// tiga()
+
+const token = ~~[Math.random() * 12345678]
+const gambar = ['monalisa', 'betofen', 'raden salah']
+
+function login(username, callback) {
+    setTimeout(() => {
+        console.log('loadiiinggg.....')
+        callback({token, username})
+    }, 200);
+}
+function getcode(token, callback) {
+    if (token)
+    setTimeout(() => {
+        console.log("Processing token....")
+        callback ({codeKey: "abd1222"})
+    }, 500)
+}
+function lukisan(codeKey, callback) {
+    if (codeKey) 
+    setTimeout(() => {
+        console.log("Processing Image..")
+        callback ({gambar})
+    }, 1500)
 }
 
-total_gaji()
+login("fathoni", function(response) {
+    const {token} = response
+    getcode(token, function(response) {
+        const getcode = response
+        lukisan(getcode, function(response) {
+            const getgambar = response
+            console.log(getgambar)
+        })
+    })
+    
+})

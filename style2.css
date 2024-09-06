@@ -64,6 +64,9 @@ nav {
     opacity: 0;
     animation: fadeIn 0.5s forwards;
 }
+.active {
+    opacity: 0.5;
+}
 @media screen and (max-width: 1320px) {
     nav {
         padding: 0 50px;

@@ -2,6 +2,7 @@ const container = document.querySelector('.container');
 const pertama = document.querySelector('.pertama')
 const thumbs = document.querySelectorAll('.thumb')
 
+
 container.addEventListener('click', function(e) {
     if(e.target.className == 'thumb') {
         pertama.src = e.target.src

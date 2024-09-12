@@ -8,5 +8,12 @@ document.addEventListener("click", function() {
     }
 });
 
+document.addEventListener("click", function() {
+    const button = document.getElementById('drop')
+    button.onclick = function () {
+        const menu = document.querySelector(".link")
+        menu.classList.toggle("clicked")
+    }
+})
 
     

@@ -14,6 +14,14 @@ document.addEventListener("click", function() {
         const menu = document.querySelector(".link")
         menu.classList.toggle("clicked")
     }
-})
+});
 
+document.addEventListener("click", function() {
+    const trigger = document.getElementById('drop-button') 
+    trigger.onclick =  function () {
+        const dropmenu = document.querySelector(".show")
+        dropmenu.classList.toggle("drop-clicked")
+        console.log("Trigger terklik")
+    }
+})
     

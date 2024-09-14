@@ -114,6 +114,27 @@ nav {
     display: block;
     transition: 0.3s;
 }
+.modal button {
+    padding: 5px;
+    font-size: 20px;
+    font-family: monospace;
+    margin-left: 3rem;
+    margin-top: 1rem;
+    cursor: pointer;
+}
+.modalpop {
+    border-radius: 8px;
+    text-align: center;
+    background-color: rgb(0, 37, 61);
+    width: 40%;
+    height: 28vh;
+    margin: 2rem;
+    display: none;
+}
+.modalpop.modalshow {
+    display: block;
+    transition: 0.2s;
+}
 @media screen and (max-width: 1320px) {
     nav {
         padding: 0 50px;

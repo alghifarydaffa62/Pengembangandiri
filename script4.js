@@ -60,6 +60,13 @@ document.addEventListener("click", function() {
     trigger.onclick = function () {
         const content = document.querySelector(".dropdown3")
         content.classList.toggle("drop")
-        console.log("accordion sudah di klik")
+    }
+})
+
+document.addEventListener("click", function () {
+    const button = document.getElementById("button")
+    button.onclick = function () {
+        const modalbox = document.querySelector(".modalpop")
+        modalbox.classList.toggle("modalshow")
     }
 })

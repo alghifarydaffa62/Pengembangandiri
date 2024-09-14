@@ -37,3 +37,29 @@ const countdownInterval = setInterval(() => {
     document.getElementById("minute").innerHTML = minute
     document.getElementById("second").innerHTML = second
 }, 1000)
+
+document.addEventListener("click", function() {
+    const trigger = document.getElementById("link1") 
+    trigger.onclick = function () {
+        const content = document.querySelector(".dropdown")
+        content.classList.toggle("drop")
+        console.log("accordion sudah di klik")
+    }
+})
+
+document.addEventListener("click", function() {
+    const trigger = document.getElementById("link2") 
+    trigger.onclick = function () {
+        const content = document.querySelector(".dropdown2")
+        content.classList.toggle("drop")
+        console.log("accordion sudah di klik")
+    }
+})
+document.addEventListener("click", function() {
+    const trigger = document.getElementById("link3") 
+    trigger.onclick = function () {
+        const content = document.querySelector(".dropdown3")
+        content.classList.toggle("drop")
+        console.log("accordion sudah di klik")
+    }
+})

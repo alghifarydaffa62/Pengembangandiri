@@ -49,6 +49,71 @@ nav {
 .day h2, .hour h2, .minute h2, .second h2 {
     margin: 19px;
 }
+.accordion {
+    display: block;
+    margin: 3rem;
+    width: 40%;
+}
+.link1 h3 {
+    background-color: rgb(82, 82, 185);
+    height: 6vh;
+    display: flex;
+    align-items: center;
+    border-radius: 5px;
+    padding-left: 1rem;
+    cursor: pointer;
+}
+.link2 h3 {
+    background-color: rgb(82, 82, 185);
+    height: 6vh;
+    display: flex;
+    align-items: center;
+    border-radius: 5px;
+    padding-left: 1rem;
+    cursor: pointer;
+}
+.link3 h3 {
+    background-color: rgb(82, 82, 185);
+    height: 6vh;
+    display: flex;
+    align-items: center;
+    border-radius: 5px;
+    padding-left: 1rem;
+    cursor: pointer;
+}
+.dropdown p {
+    background-color: rgb(9, 9, 85);
+    height: 10vh;
+    border-radius: 5px;
+    padding: 1rem;
+    display: none;
+}
+.dropdown2 p {
+    background-color: rgb(9, 9, 85);
+    height: 10vh;
+    border-radius: 5px;
+    padding: 1rem;
+    display: none;
+}
+.dropdown3 p {
+    background-color: rgb(9, 9, 85);
+    height: 10vh;
+    border-radius: 5px;
+    padding: 1rem;
+    display: none;
+}
+.dropdown.drop p {
+    display: block;
+    transition: 0.3s;
+}
+.dropdown2.drop p {
+    display: block;
+    transition: 0.3s;
+}
+.dropdown3.drop p {
+    display: block;
+    transition: 0.3s;
+}
 @media screen and (max-width: 1320px) {
     nav {
         padding: 0 50px;

@@ -92,3 +92,20 @@ document.addEventListener("DOMContentLoaded", function() {
         comment.classList.add("deleted")
     }
 })
+
+function buat () {
+        let Nama = prompt('Masukkan nama anda: ')
+        let Prodi = prompt('Masukkan prodi kalian: ')
+        let Pekerjaan = prompt('Pekerjaan: ')
+        // console.log(`Nama kamu ${Nama}, Prodi kamu ${Prodi}, Pekerjaan kamu ${Pekerjaan}`)
+
+        let inputnama = document.getElementById("nama")
+        inputnama.innerHTML(Nama)
+
+        let inputprodi = document.getElementById("prodi")
+        inputprodi.innerHTML(Prodi)
+
+        let inputkerja = document.getElementById("pekerjaan")
+        inputkerja.innerHTML(Pekerjaan)
+
+}

@@ -70,3 +70,25 @@ document.addEventListener("click", function () {
         modalbox.classList.toggle("modalshow")
     }
 })
+
+document.addEventListener("DOMContentLoaded", function() {
+    const remove = document.getElementById("delete")
+    remove.onclick = function () {
+        const comment = document.querySelector(".person-box")
+        comment.classList.toggle("deleted")
+    }
+})
+document.addEventListener("DOMContentLoaded", function() {
+    const remove = document.getElementById("delete2")
+    remove.onclick = function () {
+        const comment = document.querySelector(".person-box2")
+        comment.classList.add("deleted")
+    }
+})
+document.addEventListener("DOMContentLoaded", function() {
+    const remove = document.getElementById("delete3")
+    remove.onclick = function () {
+        const comment = document.querySelector(".person-box3")
+        comment.classList.add("deleted")
+    }
+})

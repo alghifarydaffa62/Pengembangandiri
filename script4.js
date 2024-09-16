@@ -93,12 +93,26 @@ document.addEventListener("DOMContentLoaded", function() {
     }
 })
 
-function buat () {
-       const matkul = prompt("Masukkan Matkul: ")
-       const dl = prompt("Masukkan Deadline: ")
-       const description = prompt("Berikan deskripsi: ")
 
-       const box = document.createElement('div')
+function saveToLocalStorage(matkul, dl, description) {
+    const data = { matkul, dl, description };
+    let savedData = JSON.parse(localStorage.getItem('data')) || [];
+    savedData.push(data);
+    localStorage.setItem('data', JSON.stringify(savedData));
+}
+
+// function createcontainer() {
+//     const contain = document.createElement('div')
+//     contain.classList.add("tugas")
+
+//     const child = document.querySelector(".boxpop")
+//     contain.appendChild(child)
+//     contain.style.display = 'flex'
+// }
+
+function createbox(matkul, dl, description) {
+    const contain = document.querySelector(".tugas")
+    const box = document.createElement('div')
        box.classList.add("boxpop")
 
        const judul = document.createElement('h1')
@@ -116,13 +130,26 @@ function buat () {
         box.appendChild(tenggat)
         box.appendChild(keterangan)
 
-        document.body.appendChild(box);
-    //    const body = document.body
-    //    body.innerHTML(box)
-    //    document.getElementById('matkul').textContent = matkul
-    //    document.getElementById('deadline').textContent = dl
-    //    document.getElementById('desc').textContent = description
-
-    //    const box = document.querySelector(".boxpop")
-    //    box.classList.add("listpop")
+        contain.appendChild(box);
 }
+
+function loadFromLocalStorage() {
+    const savedData = JSON.parse(localStorage.getItem('data')) || [];
+    savedData.forEach(data => {
+        createbox(data.matkul, data.dl, data.description);
+    });
+}
+
+
+function buat () {
+       const matkul = prompt("Masukkan Matkul: ")
+       const dl = prompt("Masukkan Deadline: ")
+       const description = prompt("Berikan deskripsi: ")
+
+       createbox(matkul, dl, description)
+       saveToLocalStorage(matkul, dl, description)
+}
+
+window.onload = function() {
+    loadFromLocalStorage();
+};

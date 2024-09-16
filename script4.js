@@ -14,7 +14,7 @@ const countdownInterval = setInterval(() => {
     const now = new Date().getTime()
     const selisih = target - now
 
-    if(selisih == 0) {
+    if(selisih <= 0) {
         clearInterval(countdownInterval)
         document.getElementById("day").innerHTML = "0"
         document.getElementById("hour").innerHTML = "0"
@@ -32,10 +32,10 @@ const countdownInterval = setInterval(() => {
     minute = String(minute).padStart(2, '0')
     second = String(second).padStart(2, '0')
 
-    document.getElementById("day").innerHTML = day
-    document.getElementById("hour").innerHTML = hour
-    document.getElementById("minute").innerHTML = minute
-    document.getElementById("second").innerHTML = second
+    // document.getElementById("day").innerHTML = day
+    // document.getElementById("hour").innerHTML = hour
+    // document.getElementById("minute").innerHTML = minute
+    // document.getElementById("second").innerHTML = second
 }, 1000)
 
 document.addEventListener("click", function() {
@@ -94,18 +94,14 @@ document.addEventListener("DOMContentLoaded", function() {
 })
 
 function buat () {
-        let Nama = prompt('Masukkan nama anda: ')
-        let Prodi = prompt('Masukkan prodi kalian: ')
-        let Pekerjaan = prompt('Pekerjaan: ')
-        // console.log(`Nama kamu ${Nama}, Prodi kamu ${Prodi}, Pekerjaan kamu ${Pekerjaan}`)
+       const matkul = prompt("Masukkan Matkul: ")
+       const dl = prompt("Masukkan Deadline: ")
+       const description = prompt("Berikan deskripsi: ")
 
-        let inputnama = document.getElementById("nama")
-        inputnama.innerHTML(Nama)
+       document.getElementById('matkul').textContent = matkul
+       document.getElementById('deadline').textContent = dl
+       document.getElementById('desc').textContent = description
 
-        let inputprodi = document.getElementById("prodi")
-        inputprodi.innerHTML(Prodi)
-
-        let inputkerja = document.getElementById("pekerjaan")
-        inputkerja.innerHTML(Pekerjaan)
-
+       const box = document.querySelector(".boxpop")
+       box.classList.add("listpop")
 }

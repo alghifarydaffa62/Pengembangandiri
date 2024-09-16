@@ -219,11 +219,10 @@ nav {
     background-color: rgb(10, 18, 68);
     margin: 2rem 3rem;
     padding: 2rem 2rem;
-    display: none;
 }
-.boxpop.listpop {
+/* .boxpop.listpop {
     display: block;
-}
+} */
 @media screen and (max-width: 1320px) {
     nav {
         padding: 0 50px;

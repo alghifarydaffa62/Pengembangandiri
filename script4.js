@@ -98,10 +98,31 @@ function buat () {
        const dl = prompt("Masukkan Deadline: ")
        const description = prompt("Berikan deskripsi: ")
 
-       document.getElementById('matkul').textContent = matkul
-       document.getElementById('deadline').textContent = dl
-       document.getElementById('desc').textContent = description
+       const box = document.createElement('div')
+       box.classList.add("boxpop")
 
-       const box = document.querySelector(".boxpop")
-       box.classList.add("listpop")
+       const judul = document.createElement('h1')
+       judul.textContent = "Matkul: " + matkul
+
+       const tenggat = document.createElement('h3')
+       tenggat.style.marginTop = '1rem'
+       tenggat.textContent = "Deadline: " + dl
+
+       const keterangan = document.createElement('p')
+       keterangan.style.marginTop = '1rem'
+       keterangan.textContent = description
+
+        box.appendChild(judul)
+        box.appendChild(tenggat)
+        box.appendChild(keterangan)
+
+        document.body.appendChild(box);
+    //    const body = document.body
+    //    body.innerHTML(box)
+    //    document.getElementById('matkul').textContent = matkul
+    //    document.getElementById('deadline').textContent = dl
+    //    document.getElementById('desc').textContent = description
+
+    //    const box = document.querySelector(".boxpop")
+    //    box.classList.add("listpop")
 }

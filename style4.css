@@ -249,6 +249,40 @@ nav {
     border-radius: 5px;
     cursor: pointer;
 }
+.sider {
+    display: flex;
+    gap: 1rem;
+    margin: 1rem 2rem;
+    overflow-x: auto;
+    padding-bottom: 10px;
+}
+.comments {
+    width: 20vw;
+    cursor: grab;
+}
+.comments p {
+    width: 80%;
+}
+.sider::-webkit-scrollbar {
+    height: 4px; 
+}
+.sider::-webkit-scrollbar-track {
+    background: rgb(10, 18, 68); 
+} 
+.sider::-webkit-scrollbar-thumb {
+    background-color: rgb(12, 22, 82); /* Warna handle scrollbar */
+    border-radius: 10px; /* Membulatkan handle */
+}
+.effect {
+    width: 80vw;
+    height: 75vh;
+    border-radius: 10px;
+    margin: 1rem 2rem;
+}
+.effect:hover {
+    background: radial-gradient(circle, #081b86, #010e49);
+    transition: 0.5s;
+}
 @media screen and (max-width: 1320px) {
     nav {
         padding: 0 50px;

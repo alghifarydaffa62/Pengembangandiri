@@ -211,6 +211,9 @@ nav {
     border-radius: 5px;
     margin: 2rem 3rem;
     cursor: pointer;
+    background-color: rgb(34, 87, 138);
+    font-size: 15px;
+    color: white;
 }
 .boxpop {
     width: 25vw;
@@ -228,6 +231,13 @@ nav {
 /* .boxpop.listpop {
     display: block;
 } */
+.remove {
+    padding: 8px;
+    font-size: 14px;
+    margin-top: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+}
 @media screen and (max-width: 1320px) {
     nav {
         padding: 0 50px;

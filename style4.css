@@ -217,16 +217,27 @@ nav {
 }
 .boxpop {
     width: 25vw;
-    height: 25vh;
+    max-height: 25vh;
+    overflow-y: auto;
     border-radius: 10px;
     background-color: rgb(10, 18, 68);
-    padding: 2rem 2rem;
+    padding: 1rem 2rem;
+}
+.boxpop::-webkit-scrollbar {
+    width: 4px; 
+}
+.boxpop::-webkit-scrollbar-track {
+    background: rgb(10, 18, 68); 
+} 
+.boxpop::-webkit-scrollbar-thumb {
+    background-color: #231c5f; /* Warna handle scrollbar */
+    border-radius: 10px; /* Membulatkan handle */
 }
 .tugas {
     display: flex;
     flex-wrap: wrap;
     gap: 2rem;
-    margin: 2rem 3rem;
+    margin: 2rem 2rem;
 }
 /* .boxpop.listpop {
     display: block;

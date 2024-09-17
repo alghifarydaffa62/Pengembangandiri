@@ -94,24 +94,25 @@ document.addEventListener("DOMContentLoaded", function() {
 })
 
 
-// function saveToLocalStorage(matkul, dl, description) {
-//     const data = { matkul, dl, description };
-//     const remove = document.createElement('button')
-//     remove.textContent = "Delete"
+function saveToLocalStorage(matkul, dl, description) {
+    const data = { matkul, dl, description };
 
-//     let savedData = JSON.parse(localStorage.getItem('data')) || [];
-//     savedData.push(data);
-//     localStorage.setItem('data', JSON.stringify(savedData));
-// }
+    let savedData = JSON.parse(localStorage.getItem('data')) || [];
+    savedData.push(data);
+    localStorage.setItem('data', JSON.stringify(savedData));
+}
 
 function createbox(matkul, dl, description) {
     const contain = document.querySelector(".tugas")
     const box = document.createElement('div')
     box.classList.add("boxpop")
 
-    // const remove = document.createElement('button')
-    // remove.textContent = "Delete"
-    // remove.classList.add("remove")
+    const remove = document.createElement('button')
+    remove.textContent = "Delete"
+    remove.classList.add("remove")
+    remove.onclick = function () {
+        box.style.display = 'none'
+    }
 
        const judul = document.createElement('h1')
        judul.textContent = "Matkul: " + matkul
@@ -124,23 +125,23 @@ function createbox(matkul, dl, description) {
        keterangan.style.marginTop = '1rem'
        keterangan.textContent = description
 
-        const buttonremove = document.getElementById("hapus")
+        // const buttonremove = document.getElementById("hapus")
 
         box.appendChild(judul)
         box.appendChild(tenggat)
         box.appendChild(keterangan)
-        box.appendChild(buttonremove)
+        box.appendChild(remove)
 
         contain.appendChild(box)
 }
 
-// function loadFromLocalStorage() {
-//     const savedData = JSON.parse(localStorage.getItem('data')) || [];
-//     savedData.forEach(data => {
-//         createbox(data.matkul, data.dl, data.description);
-//     });
+function loadFromLocalStorage() {
+    const savedData = JSON.parse(localStorage.getItem('data')) || [];
+    savedData.forEach(data => {
+        createbox(data.matkul, data.dl, data.description);
+    });
     
-// }
+}
 
 
 function buat () {
@@ -149,9 +150,9 @@ function buat () {
        const description = prompt("Berikan deskripsi: ")
 
        createbox(matkul, dl, description)
-    //    saveToLocalStorage(matkul, dl, description)
+       saveToLocalStorage(matkul, dl, description)
 }
 
-// window.onload = function() {
-//     loadFromLocalStorage();
-// };
+window.onload = function() {
+    loadFromLocalStorage();
+};
